@@ -10,7 +10,7 @@ data "terraform_remote_state" "global" {
 }
 
 
-# Intersight Provider Information 
+# Intersight Provider Information
 terraform {
   required_providers {
     intersight = {
@@ -56,10 +56,10 @@ data "intersight_organization_organization" "organization_moid" {
 
 resource "intersight_kubernetes_cluster_profile" "kubeprofaction" {
   action = "Delete"
-  name = local.clustername 
+  name = local.clustername
   organization {
     object_type = "organization.Organization"
-    moid        = data.intersight_organization_organization.organization_moid.results.0.moid 
+    moid        = data.intersight_organization_organization.organization_moid.results.0.moid
   }
 }
 
