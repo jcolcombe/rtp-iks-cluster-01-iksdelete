@@ -3,7 +3,9 @@ data "terraform_remote_state" "global" {
   backend = "remote"
   config = {
     organization = "cisco-intersight-demo"
-    workspaces = "rtp-iks-cluster-01-global
+    workspaces = {
+      name = var.globalwsname
+    }
   }
 }
 
